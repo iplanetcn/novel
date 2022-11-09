@@ -11,6 +11,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * 小说排行榜 缓存管理类
@@ -74,7 +75,7 @@ public class BookRankCacheManager {
             respDto.setLastChapterUpdateTime(v.getLastChapterUpdateTime());
             respDto.setWordCount(v.getWordCount());
             return respDto;
-        }).toList();
+        }).collect(Collectors.toList());
     }
 
 }

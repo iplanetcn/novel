@@ -15,10 +15,10 @@
     <description>Spring Boot 3 + Vue 3 构建的前后端分离小说系统</description>
     <properties>
         <java.version>17</java.version>
-        <mybatis-plus.version>3.5.1</mybatis-plus.version>
+        <mybatis-plus.version>3.5.2</mybatis-plus.version>
         <spring.version>6.0.0-SNAPSHOT</spring.version>
         <jjwt.version>0.11.5</jjwt.version>
-        <elasticsearch.version>8.2.0</elasticsearch.version>
+        <elasticsearch.version>8.5.0</elasticsearch.version>
     </properties>
     <dependencies>
         <dependency>

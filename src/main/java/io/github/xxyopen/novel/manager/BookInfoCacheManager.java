@@ -14,12 +14,12 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * 小说信息 缓存管理类
  *
  * @author xiongxiaoyang
- * @date 2022/5/12
  */
 @Component
 @RequiredArgsConstructor
@@ -84,7 +84,7 @@ public class BookInfoCacheManager {
         queryWrapper.eq(DatabaseConsts.BookTable.COLUMN_CATEGORY_ID, categoryId)
                 .orderByDesc(DatabaseConsts.BookTable.COLUMN_LAST_CHAPTER_UPDATE_TIME)
                 .last(DatabaseConsts.SqlEnum.LIMIT_500.getSql());
-        return bookInfoMapper.selectList(queryWrapper).stream().map(BookInfo::getId).toList();
+        return bookInfoMapper.selectList(queryWrapper).stream().map(BookInfo::getId).collect(Collectors.toList());
     }
 
 }
