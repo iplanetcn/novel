@@ -48,7 +48,7 @@ public class HomeBookCacheManager {
         if (!CollectionUtils.isEmpty(homeBooks)) {
             List<Long> bookIds = homeBooks.stream()
                     .map(HomeBook::getBookId)
-                    .toList();
+                    .collect(Collectors.toList());
 
             // 根据小说ID列表查询相关的小说信息列表
             QueryWrapper<BookInfo> bookInfoQueryWrapper = new QueryWrapper<>();
@@ -69,7 +69,7 @@ public class HomeBookCacheManager {
                     bookRespDto.setAuthorName(bookInfo.getAuthorName());
                     bookRespDto.setBookDesc(bookInfo.getBookDesc());
                     return bookRespDto;
-                }).toList();
+                }).collect(Collectors.toList());
 
             }
 

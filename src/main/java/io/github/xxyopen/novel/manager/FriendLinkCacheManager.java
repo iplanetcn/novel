@@ -11,6 +11,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * 友情链接 缓存管理类
@@ -38,7 +39,7 @@ public class FriendLinkCacheManager {
             respDto.setLinkName(v.getLinkName());
             respDto.setLinkUrl(v.getLinkUrl());
             return respDto;
-        }).toList();
+        }).collect(Collectors.toList());
     }
 
 }

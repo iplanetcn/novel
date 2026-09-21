@@ -11,6 +11,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * 新闻 缓存管理类
@@ -41,7 +42,7 @@ public class NewsCacheManager {
                 .title(v.getTitle())
                 .sourceName(v.getSourceName())
                 .updateTime(v.getUpdateTime())
-                .build()).toList();
+                .build()).collect(Collectors.toList());
     }
 
 }
